@@ -26,6 +26,7 @@ import org.pipeman.bb.games.jungle_arena.JungleArenaGame;
 import org.pipeman.bb.games.mine.MineGame;
 import org.pipeman.bb.games.mlg.MLGGame;
 import org.pipeman.bb.games.pull_ships.PullShipsGame;
+import org.pipeman.bb.games.shoot_the_chicken.ShootTheChickenGame;
 import org.pipeman.bb.games.shooting_ranges.DarkOakShooting;
 import org.pipeman.bb.games.shooting_ranges.JungleShooting;
 import org.pipeman.bb.utils.DontMoveActionManager;
@@ -61,6 +62,7 @@ public final class Main extends JavaPlugin {
         registerGame(new BreakingIceGame());
         registerEventListener(new JNRGame());
         registerEventListener(new CakeGame());
+        registerGame(new ShootTheChickenGame());
 
         registerCommand("mine", new MineCommand());
         registerCommand("shop", TeleportCommands.SHOP_EXECUTOR);

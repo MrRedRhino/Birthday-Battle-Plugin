@@ -58,6 +58,6 @@ public class Countdown {
     }
 
     public boolean isRunning() {
-        return ticksLeft > 0;
+        return ticksLeft >= 0;
     }
 }

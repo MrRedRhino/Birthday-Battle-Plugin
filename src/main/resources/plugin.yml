@@ -1,0 +1,15 @@
+name: Birthdayattle
+version: '${project.version}'
+main: org.pipeman.bb.Main
+api-version: 1.19
+commands:
+  spawn:
+    description: Teleportiert dich zum Spawn
+  shop:
+    description: Teleportiert dich zum Shop
+  bank:
+    description: Münzen ein- und auszalhen, um sie beim Shop zu verkaufen
+  mine:
+    description: a
+  boatgame:
+    description: Resets the boat game

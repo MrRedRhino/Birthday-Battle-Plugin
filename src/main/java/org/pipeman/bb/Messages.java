@@ -34,7 +34,9 @@ public enum Messages {
     BOAT_RACE_WINNER(GREEN + "Du hast das Bootrennen gewonnen!"),
     BOAT_RACE_PLACE(GREEN + "Du bist {0}. Platz"),
 
-    SPLEEF_PLAYER_DIED(RED + "{0} ist ins Wasser gefallen!");
+    SPLEEF_PLAYER_DIED(RED + "{0} ist ins Wasser gefallen!"),
+
+    WAITING_FOR_PLAYER(GREEN + "Du bist dem Spiel beigetreten. Das Spiel beginnt, sobald ein weiterer Mitspieler beitritt.");
 
     private final String text;
 

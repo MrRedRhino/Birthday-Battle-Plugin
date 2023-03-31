@@ -21,6 +21,7 @@ import org.pipeman.bb.games.breaking_ice.BreakingIceGame;
 import org.pipeman.bb.games.cake.CakeGame;
 import org.pipeman.bb.games.elytra.ElytraRaceGame;
 import org.pipeman.bb.games.get_to_the_top.GetToTheTopGame;
+import org.pipeman.bb.games.ice_boat_race.IceRaceGame;
 import org.pipeman.bb.games.jnr.JNRGame;
 import org.pipeman.bb.games.jungle_arena.JungleArenaGame;
 import org.pipeman.bb.games.mine.MineGame;
@@ -52,6 +53,7 @@ public final class Main extends JavaPlugin {
         registerGame(new MineGame());
         registerGame(new ArenaGame());
         registerGame(new SpleefGame());
+        registerGame(new IceRaceGame());
         registerGame(new BoatRaceGame());
         registerGame(new PullShipsGame());
         registerGame(new ElytraRaceGame());

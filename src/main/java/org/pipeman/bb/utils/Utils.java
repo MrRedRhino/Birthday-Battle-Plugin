@@ -80,6 +80,10 @@ public class Utils {
         return null;
     }
 
+    public static boolean between(double value, double bound1, double bound2) {
+        return value >= Math.min(bound1, bound2) && value <= Math.max(bound1, bound2);
+    }
+
     @FunctionalInterface
     public interface ThrowingConsumer<T> extends Consumer<T> {
         @Override

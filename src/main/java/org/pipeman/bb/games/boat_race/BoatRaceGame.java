@@ -106,12 +106,13 @@ public class BoatRaceGame implements Game {
     @EventHandler
     public void exitBoat(VehicleExitEvent event) {
         if (event.getExited() instanceof Player player) {
+            boolean isInGameBoat = event.getVehicle().getScoreboardTags().contains(BOAT_TAG);
             if (isOn) {
-                if (event.getVehicle().getScoreboardTags().contains(BOAT_TAG) && GameManager.isPlayingGame(player, id())) {
+                if (isInGameBoat && GameManager.isPlayingGame(player, id())) {
                     event.setCancelled(true);
                 }
             } else {
-                GameManager.leaveGame(player);
+                if (isInGameBoat) GameManager.leaveGame(player);
             }
         }
     }
@@ -130,12 +131,12 @@ public class BoatRaceGame implements Game {
         for (Cell cell : CELLS) {
             for (Boat boat : cell.getBoatsInside(boats)) {
                 if (!boat.getScoreboardTags().contains(CHECKPOINT_TAG)) continue;
-                checkForFinish(boats, boat);
+                checkForFinish(boat);
             }
         }
     }
 
-    private void checkForFinish(List<Boat> boats, Boat boat) {
+    private void checkForFinish(Boat boat) {
         for (Entity passenger : boat.getPassengers()) {
             if (!(passenger instanceof Player player)) continue;
 

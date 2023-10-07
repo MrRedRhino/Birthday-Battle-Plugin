@@ -18,6 +18,7 @@ import org.pipeman.bb.games.SpleefGame;
 import org.pipeman.bb.games.arena.ArenaGame;
 import org.pipeman.bb.games.boat_race.BoatRaceGame;
 import org.pipeman.bb.games.breaking_ice.BreakingIceGame;
+import org.pipeman.bb.games.cactus.CactusTowerGame;
 import org.pipeman.bb.games.cake.CakeGame;
 import org.pipeman.bb.games.elytra.ElytraRaceGame;
 import org.pipeman.bb.games.get_to_the_top.GetToTheTopGame;
@@ -62,6 +63,7 @@ public final class Main extends JavaPlugin {
         registerGame(new DarkOakShooting());
         registerGame(new GetToTheTopGame());
         registerGame(new BreakingIceGame());
+        registerGame(new CactusTowerGame());
         registerEventListener(new JNRGame());
         registerEventListener(new CakeGame());
         registerGame(new ShootTheChickenGame());
@@ -74,6 +76,7 @@ public final class Main extends JavaPlugin {
             BoatRaceGame.resetGame();
             return true;
         });
+        registerCommand("leavegame", TeleportCommands.LEAVE_EXECUTOR);
 
         SignTeleporter.registerSign(
                 new Location(Bukkit.getWorld("world"), -198, 65, 155),

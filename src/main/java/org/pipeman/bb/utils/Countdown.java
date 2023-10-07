@@ -4,12 +4,16 @@ import net.kyori.adventure.text.Component;
 import net.kyori.adventure.title.Title;
 import org.bukkit.ChatColor;
 import org.bukkit.entity.Player;
+import org.jetbrains.annotations.Nullable;
 
 import java.util.List;
+import java.util.function.Consumer;
 import java.util.function.Supplier;
 
 public class Countdown {
     private final Supplier<List<Player>> players;
+    @Nullable
+    private Consumer<Integer> countdownConsumer = null;
     private final Runnable callback;
     private int ticksLeft = -1;
 
@@ -23,9 +27,14 @@ public class Countdown {
             if (ticksLeft == 0) callback.run();
             if (ticksLeft % 20 == 0) {
                 showCountdownMessage(ticksLeft / 20);
+                if (countdownConsumer != null) countdownConsumer.accept(ticksLeft / 20);
             }
             ticksLeft--;
         }
+    }
+
+    public void setCountdownConsumer(@Nullable Consumer<Integer> consumer) {
+        this.countdownConsumer = consumer;
     }
 
     private void showCountdownMessage(int seconds) {
@@ -55,6 +64,10 @@ public class Countdown {
 
     public void start() {
         ticksLeft = 200;
+    }
+
+    public void start(int seconds) {
+        ticksLeft = seconds * 20;
     }
 
     public boolean isRunning() {

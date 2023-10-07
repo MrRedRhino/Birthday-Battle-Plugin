@@ -13,3 +13,5 @@ commands:
     description: a
   boatgame:
     description: Resets the boat game
+  leavegame:
+    description: Wirft dich aus dem Spiel, das du gerade spielst

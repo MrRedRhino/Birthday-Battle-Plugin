@@ -8,6 +8,7 @@ import org.bukkit.entity.Player;
 import org.bukkit.util.BoundingBox;
 import org.bukkit.util.Vector;
 import org.jetbrains.annotations.Nullable;
+import org.pipeman.bb.Main;
 
 import java.util.List;
 import java.util.Optional;
@@ -82,6 +83,10 @@ public class Utils {
 
     public static boolean between(double value, double bound1, double bound2) {
         return value >= Math.min(bound1, bound2) && value <= Math.max(bound1, bound2);
+    }
+
+    public static Location loc(int x, int y, int z) {
+        return new Location(Main.getGameWorld(), x, y, z);
     }
 
     @FunctionalInterface

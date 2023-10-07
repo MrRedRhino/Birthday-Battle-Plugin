@@ -12,7 +12,7 @@ import static org.bukkit.ChatColor.*;
 
 public enum Messages {
     TELEPORT_CANCELLED(RED + BOLD.toString() + "Du hast dich bewegt! Dein Teleport wurde abgebrochen."),
-    TELEPORT_SOON(GREEN + "Du wirst in 5 sekunden teleportiert. Bewege dich solange nicht!"),
+    TELEPORT_SOON(GREEN + "Du wirst in 3 sekunden teleportiert. Bewege dich solange nicht!"),
 
     MLG_FAIL(RED + BOLD.toString() + "Leider nicht geschafft!"),
 
@@ -36,7 +36,10 @@ public enum Messages {
 
     SPLEEF_PLAYER_DIED(RED + "{0} ist ins Wasser gefallen!"),
 
-    WAITING_FOR_PLAYER(GREEN + "Du bist dem Spiel beigetreten. Das Spiel beginnt, sobald ein weiterer Mitspieler beitritt.");
+    WAITING_FOR_PLAYER(GREEN + "Das Spiel beginnt, sobald ein weiterer Mitspieler beitritt."),
+
+    WIN(GREEN + "Du hast das Spiel gewonnen!"),
+    WINNER(GREEN + "{0} hat das Spiel gewonnen!");
 
     private final String text;
 
